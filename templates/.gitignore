@@ -10,3 +10,4 @@ public/ng2
 *.ipr
 *.DS_Store
 **/.DS_Store
+dist

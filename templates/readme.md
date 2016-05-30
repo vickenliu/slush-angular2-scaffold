@@ -1,9 +1,8 @@
-## Angular2 Hydrane
+## <%= appName %>
 
 ## Install & Development
 ```bash
-git clone https://github.com/vickenliu/hydraneVicken
-cd hydraneVicken
+cd <%= appName %>
 
 # Install dependencies
 npm install
@@ -12,7 +11,11 @@ npm install
 npm start
 
 # Applciation url: http://localhost:8080
+# if there are errors when bundling, please run
+
+npm run typings
 ```
+
 
 ## Deployment
 

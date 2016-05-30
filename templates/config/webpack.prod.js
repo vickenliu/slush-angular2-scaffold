@@ -19,19 +19,12 @@ module.exports = webpackMerge(commonConfig, {
   htmlLoader: {
     minimize: false // workaround for ng2
   },
-  const NoErrorsPlugin = require('webpack/lib/NoErrorsPlugin');
-  const DefinePlugin = require('webpack/lib/DefinePlugin');
-  const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
-  const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-  const CompressionPlugin = require('compression-webpack-plugin');
-  const WebpackMd5Hash = require('webpack-md5-hash');
-
   plugins: [
-    new NoErrorsPlugin(),
-    new DedupePlugin(),
-    new UglifyJsPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin('[name].[hash].css'),
-    new DefinePlugin({
+    new webpack.DefinePlugin({
       'process.env': {
         'ENV': JSON.stringify(ENV)
       }

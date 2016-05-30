@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
-    'app': './app/main.ts'
+    'app': './src/main.ts'
   },
 
   resolve: {
@@ -30,12 +30,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
+        exclude: helpers.root('app', 'style'),
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
       },
       {
         test: /\.css$/,
-        include: helpers.root('src', 'app'),
+        include: helpers.root('app', 'style'),
         loader: 'raw'
       }
     ]
@@ -47,7 +47,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: 'public/index.html'
+      template: 'app/index.html'
     })
   ]
 };
